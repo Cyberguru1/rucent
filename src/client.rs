@@ -89,8 +89,8 @@ pub struct Client {
 /// DefaultHTTPClent
 pub fn default_http_client() -> ReqClient {
     ReqClient::builder()
-        .pool_max_idle_per_host(100)
-        .timeout(Duration::from_secs(1))
+        .pool_max_idle_per_host(300)// set max pool to 300
+        .timeout(Duration::from_secs(600)) // set timeout to 10 minutes
         .build()
         .unwrap()
 }

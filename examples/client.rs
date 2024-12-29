@@ -58,7 +58,6 @@ async fn main() {
         Err(e) => log::error!("Channels fetch failed: {:?}", e),
     }
 
-
     // Broadcast to multiple channels
 
     let mut channels = Vec::new();
@@ -67,12 +66,14 @@ async fn main() {
         channels.push(format!("test_channel_{}", i));
     }
 
-
     let broadcast_result = client
         .broadcast(channels, r#"{"date": "2024-12-28"}"#, &[])
         .await;
 
-    log::info!("Broadcasted to {} channels successfully", broadcast_result.unwrap().responses.len());
+    log::info!(
+        "Broadcasted to {} channels successfully",
+        broadcast_result.unwrap().responses.len()
+    );
 
     // Send multiple commands through pipe
 
@@ -101,5 +102,4 @@ async fn main() {
     }
 
     log::info!("Sent {reply_len} commands in one http request");
-
 }

@@ -111,7 +111,7 @@ pub struct HistoryResult {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ChannelInfo {
-    pub num_users: u16,
+    pub num_clients: u16,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
