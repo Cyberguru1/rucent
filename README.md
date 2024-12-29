@@ -52,7 +52,7 @@ async fn main() {
     let channel = "test_channel";
     let payload = serde_json::json!({ "input": "Hello, Rucent!" });
 
-    match client.publish(channel.to_string(), payload).await {
+    match client.publish(channel.to_string(), payload, &[]).await {
         Ok(response) => println!("Publish successful: {:?}", response),
         Err(err) => eprintln!("Error: {:?}", err),
     }
