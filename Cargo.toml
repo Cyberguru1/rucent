@@ -1,6 +1,6 @@
 [package]
 name = "rucent"
-version = "0.1.3"
+version = "0.1.4"
 authors = ["hamza saidu (cyberguru1) <hamzasaidu34@gmail.com>"]
 edition = "2021"
 description = "Centrifugo HTTP API client"

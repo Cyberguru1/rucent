@@ -22,7 +22,7 @@ Add the Rucent library to your `Cargo.toml` dependencies:
 
 ```toml
 [dependencies]
-rucent = "0.1.3"
+rucent = "0.1.4"
 ```
 
 Enable optional features as needed:
