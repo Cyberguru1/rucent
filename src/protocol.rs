@@ -5,7 +5,7 @@ use std::fmt;
 /// Error reptrests API request error.
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct Error {
-    pub code: u16,
+    pub code: u32,
     pub message: String,
 }
 
@@ -39,7 +39,7 @@ pub struct ClientInfo {
 /// Publication represents message published into channel.
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Publication {
-    pub offset: u16,
+    pub offset: u64,
     pub data: serde_json::Value,
     pub info: Option<ClientInfo>,
 }
@@ -54,13 +54,13 @@ pub struct NodeInfo {
     /// version of Centrifugo node.
     pub version: String,
     /// num_clients is a number of clients connected to node.
-    pub num_clients: u16,
+    pub num_clients: u32,
     /// num_users is a number of unique users connected to node
-    pub num_users: u16,
+    pub num_users: u32,
     /// num_channels is a number of channels on node
-    pub num_channels: u16,
+    pub num_channels: u32,
     /// uptime of node in seconds.
-    pub uptime: u16,
+    pub uptime: u32,
 }
 
 /// Info Result is a reulst of info command
@@ -72,7 +72,7 @@ pub struct InfoResult {
 /// PublishResult is a result of publish command
 #[derive(Serialize, Deserialize, Debug)]
 pub struct PublishResult {
-    pub offset: Option<u16>,
+    pub offset: Option<u64>,
     pub epoch: Option<String>,
 }
 
@@ -97,21 +97,21 @@ pub struct PresenceResult {
 /// PresenceStatsResult is a reuslt of info command
 #[derive(Serialize, Deserialize, Debug)]
 pub struct PresenceStatsResult {
-    pub num_users: u16,
-    pub num_clients: u16,
+    pub num_users: u32,
+    pub num_clients: u32,
 }
 
 /// HistoryResult is a result of history command
 #[derive(Serialize, Deserialize, Debug)]
 pub struct HistoryResult {
     pub publication: Vec<Publication>,
-    pub offset: u16,
+    pub offset: u64,
     pub epoch: String,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ChannelInfo {
-    pub num_clients: u16,
+    pub num_clients: u32,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
