@@ -1,3 +1,17 @@
+<div style="background-color: #222; padding: 10px; text-align: center;">
+  <img src="https://centrifugal.dev/img/basic_pub_sub.png" alt="Centrifugo Pub/Sub" style="max-width: 100%;">
+</div>
+
+<div align="center">
+    
+Image courtesy of [centrifugal.dev](https://centrifugal.dev/)
+
+</div>
+
+
+
+
+
 # Rucent
 
 Rucent is a Rust library designed to facilitate communication with Centrifugo's HTTP API. It provides seamless interaction with Centrifugo's server for managing real-time messaging and client interactions. With Rucent, you can issue API commands such as publishing messages, managing subscriptions, and retrieving history data.
@@ -135,6 +149,11 @@ To run tests without a local Centrifugo instance:
 ```bash
 cargo test --test client -- --nocapture
 ```
+
+## References
+
+- The code was developed following the specification in this proto file: [api.proto](https://github.com/centrifugal/centrifugo/blob/master/internal/apiproto/api.proto)
+- Learn more about Centrifugo at [centrifugal.dev](https://centrifugal.dev/)
 
 ## Contributing
 
